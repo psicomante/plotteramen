@@ -1,0 +1,18 @@
+{
+	"name": "@psicomante/unicore.plottersketches",
+	"version": "1.0.0",
+	"license": "MIT",
+	"dependencies": {
+		"@psicomante/paper": "workspace:*",
+		"@psicomante/tweakpane-declarative": "workspace:*",
+		"p5": "^1.11.2",
+		"p5.js-svg": "git@github.com:psicomante/p5.js-svg.git"
+	},
+	"devDependencies": {
+		"@types/p5": "~1.7.6"
+	},
+	"scripts": {
+		"start": "yarn parcel apps/sketches/**/*.html"
+	},
+	"typings": "index.d.ts"
+}

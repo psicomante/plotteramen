@@ -1,0 +1,34 @@
+body,
+html {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+html,
+body {
+	height: 100%;
+
+	display: flex;
+
+	/* This centers our sketch horizontally. */
+	justify-content: center;
+
+	/* This centers our sketch vertically. */
+	align-items: center;
+
+	background: #f3f3f3;
+}
+
+.page-shadow {
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.page-border {
+    border: 1px solid #919191;
+}
+
+.page {
+    position: absolute;
+}

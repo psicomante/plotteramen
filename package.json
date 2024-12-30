@@ -1,0 +1,29 @@
+{
+  "name": "@psicomante/unicore.plotter",
+  "repository": "git@github.com:psicomante/unicore.plotter.git",
+  "private": true,
+  "version": "0.0.1",
+  "homepage": "https://github.com/psicomante/unicore.plotter/blob/main/README.md",
+  "description": "Monorepo of tools and libraries for creating and optimizing generative art for plotters.",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"ok\"",
+    "prepare": "husky",
+    "commitlint": "commitlint --edit"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "husky": "^9.1.7",
+    "parcel": "^2.13.3",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "author": "Psicomante <https://bsky.app/profile/psicomante.net>",
+  "license": "ISC",
+  "packageManager": "yarn@4.5.3"
+}

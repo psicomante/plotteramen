@@ -1,0 +1,11 @@
+{
+	"name": "@psicomante/paper",
+	"version": "0.0.1",
+	"description": "A page paper template for rendering plottable graphics",
+	"private": true,
+	"type": "module",
+	"main": "src/index.ts",
+	"dependencies": {
+		"@polymole/unicore.math": "workspace:*"
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"name": "@psicomante/tweakpane-declarative",
+	"version": "2.0.0-alpha.1",
+	"description": "A declarative interface for Tweakpane",
+	"private": true,
+	"main": "src/index.ts",
+	"dependencies": {
+		"tweakpane": "^4.0.5"
+	},
+	"devDependencies": {
+		"@tweakpane/core": "^2.0.5"
+	}
+}

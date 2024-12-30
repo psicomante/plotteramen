@@ -1,0 +1,8 @@
+{
+	"name": "@polymole/unicore.math",
+	"version": "0.0.1",
+	"description": "A math library",
+	"private": true,
+	"type": "module",
+	"main": "src/index.ts"
+}
