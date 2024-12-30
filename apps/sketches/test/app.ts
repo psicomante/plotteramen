@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	ui = ui.concat(paperUi);
 
 	let [pane, params] = declarePane(ui, {
-		title: "Test PlotterBonet",
+		title: "Test Unicore.Plotter",
 		expanded: true
 	});
 

@@ -8,6 +8,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"ok\"",
+    "start": "yarn parcel apps/sketches/**/*.html",
     "prepare": "husky",
     "commitlint": "commitlint --edit"
   },

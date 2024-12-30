@@ -12,7 +12,6 @@
 		"@types/p5": "~1.7.6"
 	},
 	"scripts": {
-		"start": "yarn parcel apps/sketches/**/*.html"
 	},
 	"typings": "index.d.ts"
 }
