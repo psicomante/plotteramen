@@ -1,11 +1,7 @@
 import { Paper } from "@psicomante/paper";
-import { createPaperUi } from "../common/paperUi";
-import { declarePane } from "@psicomante/tweakpane-declarative";
 import p5 from "p5";
-import { createP5Sketch } from "../common/createSketch";
-
-// @ts-ignore
-let pinstance: p5 = undefined;
+import { convert } from "@psicomante/paper/src/convert";
+import { makeP5Sketch } from "@psicomante/sketch.p5";
 
 const paintAll = (p: p5, page: Paper, params: Record<string, any>) => {
 	p.clear(0, 0, 0, 1);
@@ -15,8 +11,25 @@ const paintAll = (p: p5, page: Paper, params: Record<string, any>) => {
 	let margin = params["margin"];
 
 	p.randomSeed(seed);
+	// p.strokeWeight(CONSTANT1);
 	const [w, h] = page.getViewSize();
+	const stas = page.getStats();
+	console.log(stas);
 
+	let sizeInpxl = convert(2.2, "mm", "px", {
+		dpi: 150,
+		roundToPixel: true,
+		precision: 0
+	});
+
+	const ratio = stas.pageSize![0] / w;
+
+	const sizedd = sizeInpxl/ratio;
+	console.log(sizeInpxl, ratio, sizedd, Math.round(sizedd));
+
+	p.strokeWeight(Math.round(sizedd));
+	p.noFill();
+	// p.strokeWeight(8);
 	const stepX = (w - margin * 2) / (size - 1);
 	const stepY = (h - margin * 2) / (size - 1);
 
@@ -29,55 +42,28 @@ const paintAll = (p: p5, page: Paper, params: Record<string, any>) => {
 };
 
 let ui = [
-    {
-        name: "seed",
-        min: 0,
-        max: 100000,
-        step: 1,
-        default: 1000
-    },
-    { name: "size", min: 2, max: 200, step: 2, default: 30 },
-    { name: "margin", min: 0, max: 200, step: 5, default: 40 }
+	{
+		name: "seed",
+		min: 0,
+		max: 100000,
+		step: 1,
+		default: 1000,
+		events: [paintAll]
+	},
+	{ name: "size", min: 2, max: 200, step: 2, default: 30 },
+	{ name: "margin", min: 0, max: 200, step: 5, default: 40 }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-	const page = new Paper(document.body, {
-		size: "A4",
-		dpi: 72,
-		orientation: "landscape",
-		margin: 60
-	});
-
-	page.setup();
-
-	const [w, h] = page.getViewSize();
-	const p = new p5(createP5Sketch(w, h, (p: p5) => {
-        pinstance = p;
-    }), document.getElementById("sketch"));
-
-	const drawSketch = () => {
-		paintAll(pinstance, page, params);
-	};
-
-	const paperUi = createPaperUi(page, () => {
-		if (pinstance === undefined) {
-			return;
-		}
-
-		const [w, h] = page.getViewSize();
-
-		pinstance.resizeCanvas(w, h);
-		drawSketch();
-	});
-
-	ui = ui.concat(paperUi);
-
-	let [pane, params] = declarePane(ui, {
-		title: "Test Unicore.Plotter",
-		expanded: true
-	});
-
-	pane.addButton({ title: "draw" }).on("click", () => {
-		drawSketch();
-	});
+	makeP5Sketch(
+		"test-p5",
+		{
+			size: "A4",
+			dpi: 96,
+			orientation: "landscape",
+			margin: 60
+		},
+		paintAll,
+		ui
+	);
 });

@@ -1,0 +1,11 @@
+{
+	"name": "@psicomante/sketch.utils",
+	"version": "0.0.1",
+	"description": "Sketch Utils",
+	"private": true,
+	"type": "module",
+	"main": "src/index.ts",
+	"devDependencies": {
+		"@types/file-saver": "^2"
+	}
+}

@@ -1,4 +1,5 @@
-import { roundToDecimals } from "@polymole/unicore.math";
+import { number } from "@polymole/unicore.math";
+const { roundToDecimals } = number;
 
 export type ConvertOpts = {
 	dpi: number;
@@ -25,7 +26,7 @@ export function convert(value: number, from: "mm" | "px" | "in", to: "mm" | "px"
 			break;
 		case "in":
 			converted = value;
-			break;			
+			break;
 		case "px":
 			converted = value * INCH2MMF;
 			break;

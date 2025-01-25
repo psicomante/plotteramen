@@ -1,7 +1,8 @@
-import { absMax, normalize, roundToDecimals } from "@polymole/unicore.math";
+import { number } from "@polymole/unicore.math";
 import { convert } from "./convert";
 import { paperFormats, PaperType } from "./paper-formats";
 
+const { roundToDecimals } = number;
 
 export interface PaperOptions {
     size: PaperType | [number, number],
@@ -63,19 +64,35 @@ export class Paper {
 	/** resized page, for visualization purposes, in pixels */
 	protected viewSize?: [number, number];
 
-    constructor(protected parent: HTMLElement, protected options: PaperOptions & {margin: number}) {
+	protected paperSize?: [number, number];
 
+    constructor(protected parent: HTMLElement, protected options: PaperOptions & {margin: number}, protected _containerId: string = "sketch") {
+		if (typeof options.size === "string") {
+			this.paperSize = paperFormats[options.size] as [number, number];
+		} else {
+			this.paperSize = options.size;
+		}
     }
+
+	get containerId() {
+		return this._containerId;
+	}
+
+	getContainer() {
+		return this.container;
+	}
 
 	setup() {
 		const container = document.createElement('div')
 		container.classList.add('page', 'page-border', 'page-shadow');
-		container.id = "sketch";
+		container.id = this._containerId;
 		
 		this.parent.appendChild(container);
 		this.container = container;
 
 		this.resize();
+		
+		return container;
 	}
 
 	updatePageSize() {
@@ -108,8 +125,14 @@ export class Paper {
 		
 		this.viewSize = [viewWidth, viewHeight];
 
-		container.style.width = `${viewWidth}px`;
-		container.style.height = `${viewHeight}px`;
+		// container.style.width = `${viewWidth}px`;
+		// container.style.height = `${viewHeight}px`;
+
+		//wf = wi * scale => scale = wf/wi
+		const scale = viewWidth / this.pageSize[0];
+		const scale2 = viewHeight / this.pageSize[1];
+
+		container.style.transform = `scale(${Math.min(scale, scale2)})`;
 	}
 
 	resize() {
@@ -142,6 +165,7 @@ export class Paper {
 			viewSize: this.viewSize,
 			dpi: this.options.dpi,
 			paperSize: this.options.size,
+			paperSizeMeasure: this.paperSize,
 			margin: this.options.margin,
 			orientation: this.options.orientation
 		}

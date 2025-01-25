@@ -295,6 +295,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@lnjs/core@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "@lnjs/core@npm:0.5.0"
+  checksum: 10c0/39682c5579112e501f1ba7fb478936f6385445ab6b267ca5c2202c21dfb26dc84e8d7e0069aaf156afd85547f45803202f648f58cc57dc3f4b13b92d7a9d3fcb
+  languageName: node
+  linkType: hard
+
 "@mischnic/json-sourcemap@npm:^0.1.0":
   version: 0.1.1
   resolution: "@mischnic/json-sourcemap@npm:0.1.1"
@@ -1244,11 +1251,83 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@psicomante/nanosvg@workspace:*, @psicomante/nanosvg@workspace:packages/nanosvg":
+  version: 0.0.0-use.local
+  resolution: "@psicomante/nanosvg@workspace:packages/nanosvg"
+  dependencies:
+    "@polymole/unicore.math": "workspace:*"
+    "@psicomante/paper": "workspace:*"
+  languageName: unknown
+  linkType: soft
+
 "@psicomante/paper@workspace:*, @psicomante/paper@workspace:packages/paper":
   version: 0.0.0-use.local
   resolution: "@psicomante/paper@workspace:packages/paper"
   dependencies:
     "@polymole/unicore.math": "workspace:*"
+  languageName: unknown
+  linkType: soft
+
+"@psicomante/sketch.ln@workspace:packages/sketch.ln":
+  version: 0.0.0-use.local
+  resolution: "@psicomante/sketch.ln@workspace:packages/sketch.ln"
+  dependencies:
+    "@psicomante/sketch.ui": "workspace:*"
+    "@psicomante/sketch.utils": "workspace:*"
+    "@psicomante/tweakpane-declarative": "workspace:*"
+    "@types/p5": "npm:~1.7.6"
+    p5: "npm:^1.11.2"
+    p5.js-svg: "git@github.com:psicomante/p5.js-svg.git"
+  languageName: unknown
+  linkType: soft
+
+"@psicomante/sketch.p5@workspace:packages/sketch.p5":
+  version: 0.0.0-use.local
+  resolution: "@psicomante/sketch.p5@workspace:packages/sketch.p5"
+  dependencies:
+    "@psicomante/sketch.ui": "workspace:*"
+    "@psicomante/sketch.utils": "workspace:*"
+    "@psicomante/tweakpane-declarative": "workspace:*"
+    "@types/p5": "npm:~1.7.6"
+    p5: "npm:^1.11.2"
+    p5.js-svg: "git@github.com:psicomante/p5.js-svg.git"
+  languageName: unknown
+  linkType: soft
+
+"@psicomante/sketch.tstudo@workspace:packages/sketch.tstudo":
+  version: 0.0.0-use.local
+  resolution: "@psicomante/sketch.tstudo@workspace:packages/sketch.tstudo"
+  dependencies:
+    "@psicomante/nanosvg": "workspace:*"
+    "@psicomante/sketch.ui": "workspace:*"
+    "@psicomante/sketch.utils": "workspace:*"
+    "@psicomante/tweakpane-declarative": "workspace:*"
+    "@types/p5": "npm:~1.7.6"
+    p5: "npm:^1.11.2"
+    p5.js-svg: "git@github.com:psicomante/p5.js-svg.git"
+  languageName: unknown
+  linkType: soft
+
+"@psicomante/sketch.ui@workspace:*, @psicomante/sketch.ui@workspace:packages/sketch.ui":
+  version: 0.0.0-use.local
+  resolution: "@psicomante/sketch.ui@workspace:packages/sketch.ui"
+  dependencies:
+    "@psicomante/paper": "workspace:*"
+    "@psicomante/tweakpane-declarative": "workspace:*"
+  languageName: unknown
+  linkType: soft
+
+"@psicomante/sketch.utils@workspace:*, @psicomante/sketch.utils@workspace:packages/sketch.utils":
+  version: 0.0.0-use.local
+  resolution: "@psicomante/sketch.utils@workspace:packages/sketch.utils"
+  dependencies:
+    "@types/file-saver": "npm:^2"
+  languageName: unknown
+  linkType: soft
+
+"@psicomante/tstudo@workspace:packages/tstudo":
+  version: 0.0.0-use.local
+  resolution: "@psicomante/tstudo@workspace:packages/tstudo"
   languageName: unknown
   linkType: soft
 
@@ -1270,7 +1349,18 @@ __metadata:
     husky: "npm:^9.1.7"
     parcel: "npm:^2.13.3"
     prettier: "npm:^3.4.2"
-    typescript: "npm:^5.7.2"
+    typescript: "npm:^5.7.3"
+  languageName: unknown
+  linkType: soft
+
+"@psicomante/unicore.plottersketches.ln@workspace:apps/sketches-ln":
+  version: 0.0.0-use.local
+  resolution: "@psicomante/unicore.plottersketches.ln@workspace:apps/sketches-ln"
+  dependencies:
+    "@lnjs/core": "npm:^0.5.0"
+    "@psicomante/paper": "workspace:*"
+    "@psicomante/tweakpane-declarative": "workspace:*"
+    file-saver: "npm:^2.0.5"
   languageName: unknown
   linkType: soft
 
@@ -1280,9 +1370,8 @@ __metadata:
   dependencies:
     "@psicomante/paper": "workspace:*"
     "@psicomante/tweakpane-declarative": "workspace:*"
+    "@types/file-saver": "npm:^2"
     "@types/p5": "npm:~1.7.6"
-    p5: "npm:^1.11.2"
-    p5.js-svg: "git@github.com:psicomante/p5.js-svg.git"
   languageName: unknown
   linkType: soft
 
@@ -1440,6 +1529,13 @@ __metadata:
   dependencies:
     "@types/node": "npm:*"
   checksum: 10c0/4b7b561f195f779d07f973801a9f15d77cd58ceb67e817459688b11cc735288d30de050f445c91f4cd2c007fa86824e59a6e3cde602d150b828c4474f6e67be5
+  languageName: node
+  linkType: hard
+
+"@types/file-saver@npm:^2":
+  version: 2.0.7
+  resolution: "@types/file-saver@npm:2.0.7"
+  checksum: 10c0/c6b88a1aea8eec58469da2a90828fef6e9d5d590c7094fb959783d7c32878af80d39439734f3d41b78355dadb507f606e3d04a29a160c85411c65251e58df847
   languageName: node
   linkType: hard
 
@@ -2115,6 +2211,13 @@ __metadata:
   version: 3.0.3
   resolution: "fast-uri@npm:3.0.3"
   checksum: 10c0/4b2c5ce681a062425eae4f15cdc8fc151fd310b2f69b1f96680677820a8b49c3cd6e80661a406e19d50f0c40a3f8bffdd458791baf66f4a879d80be28e10a320
+  languageName: node
+  linkType: hard
+
+"file-saver@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "file-saver@npm:2.0.5"
+  checksum: 10c0/0a361f683786c34b2574aea53744cb70d0a6feb0fa5e3af00f2fcb6c9d40d3049cc1470e38c6c75df24219f247f6fb3076f86943958f580e62ee2ffe897af8b1
   languageName: node
   linkType: hard
 
@@ -3803,23 +3906,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.7.2":
-  version: 5.7.2
-  resolution: "typescript@npm:5.7.2"
+"typescript@npm:^5.7.3":
+  version: 5.7.3
+  resolution: "typescript@npm:5.7.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/a873118b5201b2ef332127ef5c63fb9d9c155e6fdbe211cbd9d8e65877283797cca76546bad742eea36ed7efbe3424a30376818f79c7318512064e8625d61622
+  checksum: 10c0/b7580d716cf1824736cc6e628ab4cd8b51877408ba2be0869d2866da35ef8366dd6ae9eb9d0851470a39be17cbd61df1126f9e211d8799d764ea7431d5435afa
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.7.2#optional!builtin<compat/typescript>":
-  version: 5.7.2
-  resolution: "typescript@patch:typescript@npm%3A5.7.2#optional!builtin<compat/typescript>::version=5.7.2&hash=5786d5"
+"typescript@patch:typescript@npm%3A^5.7.3#optional!builtin<compat/typescript>":
+  version: 5.7.3
+  resolution: "typescript@patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>::version=5.7.3&hash=5786d5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/f3b8082c9d1d1629a215245c9087df56cb784f9fb6f27b5d55577a20e68afe2a889c040aacff6d27e35be165ecf9dca66e694c42eb9a50b3b2c451b36b5675cb
+  checksum: 10c0/6fd7e0ed3bf23a81246878c613423730c40e8bdbfec4c6e4d7bf1b847cbb39076e56ad5f50aa9d7ebd89877999abaee216002d3f2818885e41c907caaa192cc4
   languageName: node
   linkType: hard
 

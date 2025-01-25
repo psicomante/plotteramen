@@ -4,5 +4,8 @@
 	"description": "A math library",
 	"private": true,
 	"type": "module",
-	"main": "src/index.ts"
+	"main": "src/index.ts",
+	"exports": {
+		"./number": "./src/number.ts"
+	}
 }

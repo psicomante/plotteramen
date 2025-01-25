@@ -8,7 +8,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"ok\"",
-    "start": "yarn parcel apps/sketches/**/*.html",
+    "start": "yarn parcel apps/**/*.html",
     "prepare": "husky",
     "commitlint": "commitlint --edit"
   },
@@ -18,7 +18,7 @@
     "husky": "^9.1.7",
     "parcel": "^2.13.3",
     "prettier": "^3.4.2",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.3"
   },
   "workspaces": [
     "apps/*",

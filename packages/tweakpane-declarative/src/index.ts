@@ -107,7 +107,7 @@ function parseComponents(pane: Pane, params: Params, components: Array<Component
 			addMonitor(pane, component, params);
 		}
 
-		if (component.type === "button") {
+		if (component.type === "button" || "action" in component) {
 			addButton(pane, component, params);
 		}
 
